@@ -1,12 +1,6 @@
-import random
-
-def convert(iterable, pog=[1,2,3]):
-    pog.append(3)
-    print(pog)
-    return list(map(str,iterable))
-
-nums=[]
-for _ in range(10):
-    nums.append(random.randint(1,20))
-
-print(convert(nums))
+try:
+    raw = input("введите число: ")
+    if not raw.isdigit():
+        raise ValueError("плохое число", raw)
+except ValueError as err:
+    print("некорректное значение!", err)
